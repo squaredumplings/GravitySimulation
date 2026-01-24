@@ -311,7 +311,7 @@ public class SimPanel extends JPanel implements Runnable {
             for (Particle second : particles) {
                 if (first != second) {
                     
-                    totalForce.sum(electrostaticForce(first, second));
+                    totalForce.sum(newtonianForce(first, second));
                 }
             }
 
