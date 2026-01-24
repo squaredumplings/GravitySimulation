@@ -7,8 +7,8 @@ import javax.swing.JFrame;
 
 public class MainFrame extends JFrame{
 
-    final static int WIDTH = 1080; // x
-    final static int HEIGHT = 720; // y
+    final static int WIDTH = 1280;
+    final static int HEIGHT = 720;
     SimPanel simPanel;
     ToolPanel toolPanel;
     OptionPanel optionPanel;
@@ -53,10 +53,3 @@ public class MainFrame extends JFrame{
         this.getLayeredPane().add(optionPanel, Integer.valueOf(2));
     }
 }
-
-// TODO: fix conservation of momentum in SimPanel.updateMerge()
-// TODO: there is a better way to calculate acceleration
-// TODO: make interface for configuring variables
-// TODO: make an edit mode where you can add particles
-// TODO: add minimap in the corner
-// TODO: center SimPanel in Frame (with layout?)

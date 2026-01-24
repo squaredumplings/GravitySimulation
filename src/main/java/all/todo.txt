@@ -1,0 +1,5 @@
+> add chunks for better performance (half implemented)
+> fix conservation of momentum in SimPanel.updateMerge()
+> there is a better way to calculate acceleration
+> make interface for configuring variables
+> make an edit mode where you can add particles

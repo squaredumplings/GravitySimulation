@@ -22,10 +22,10 @@ public class SimPanel extends JPanel implements Runnable {
     final static boolean MERGE = false; // if particles should merge (exclusive with collision)
     final static boolean GRAVITY = true; // if particles should have gravity
     final static boolean COLLISION = false; // if particles should collide (exclusive with merge)
-    final static boolean DECELERATE = true; // slow down particle speed to compensate for errors
+    final static boolean DECELERATE = false; // slow down particle speed to compensate for errors
 
     // simulatin parameters
-    public final static double SCALE = MainFrame.HEIGHT * 10 / 1080; // pixels in a unit (at 1080p it is 10)
+    public final static double SCALE = MainFrame.HEIGHT / 54; // pixels in a unit (currentely 20 units)
     final static int FPS = 120; // frames per second
     final static double GRAVITYSTRENGTH = 1; // strength of gravity
     final static double DECELERATOR = 0.99; // compensates for errors
@@ -40,10 +40,10 @@ public class SimPanel extends JPanel implements Runnable {
     private static final int numberOfChunks = (int)(2 * BARRIER / CHUNKSIZE) + 1;
     public static ArrayList<Particle>[][] chunkGrid = new ArrayList[numberOfChunks][numberOfChunks];
 
-    Double attraction[][] = {{1.0, 1.0, -1.0, -1.0}, 
-                             {-1.0, 1.0, 1.0, 0.0},
-                             {1.0, -1.0, 1.0, 1.0},
-                             {1.0, 0.0, -1.0, 1.0}};
+    Double attraction[][] = {{1.0, 1.0, -1.0, 0.0}, 
+                             {0.0, 1.0, 1.0, -1.0},
+                             {-1.0, 0.0, 1.0, 1.0},
+                             {1.0, -1.0, 0.0, 1.0}};
 
     public SimPanel() {
         //panel settings
@@ -59,9 +59,9 @@ public class SimPanel extends JPanel implements Runnable {
         //randomizeAttraction();
 
         create(100, 0, 1);
-        create(100, 1, 1);
-        create(100, 2, 1);
-        create(100, 3, 1);
+        // create(100, 1, 1);
+        // create(100, 2, 1);
+        // create(100, 3, 1);
     }
 
     // used to test fine details
